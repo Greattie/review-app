@@ -1,3 +1,4 @@
+/* GLOBAL STYLES */
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ body{
     width: 80%;
 }
 
+/* MAIN */
 main{
     display: flex;
     flex-direction: column;
@@ -22,5 +24,41 @@ main{
 }
 
 main h1{
-    color: ;
+padding: 2em;
+    color:#F9DC5C ;
+}
+
+
+.wrapper{
+    margin-top: 2em;
+    background-color: #E6D6C6;
+    border-radius: 10px;
+    width: 50%;
+    padding: 1.5em;
+}
+
+/* FIGURE/IMG */
+figure{
+    padding: 1em;
+}
+figure img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+figcaption{
+    padding: .2em;
+}
+figcaption p{
+    margin: 1em 0;
+}
+
+.text{
+line-height: 1.5;
+text-align: left;
+margin-bottom: 1em;
+}
+
+.btn{
+padding: 1em;
 }
