@@ -28,3 +28,53 @@ const reviews = [
       text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
     },
   ];
+
+  // COLLECT INFO FROM HTML DOM
+  const img = document.getElementById('img')
+  const names = document.getElementById('name')
+  const job = document.getElementById('job')
+  const text = document.getElementById('text')
+  const next = document.querySelector('#next')
+  const prev = document.querySelector('#prev')
+  const random = document.querySelector('.random')
+
+let currentItem = 0
+
+
+// EVENT LISTENER AFTER HTML DOM LOADS
+window.addEventListener('DOMContentLoaded', function(){
+  showPerson()
+})
+
+// SHOW PERSON FUNCTION
+function showPerson(){
+  const item = reviews[currentItem]
+  img.src = item.img
+  names.textContent = item.name
+  job.textContent = item.job
+  text.textContent = item.text
+}
+
+// NEXT BUTTON
+next.addEventListener('click', function(){
+currentItem++
+if(currentItem > reviews.length -1){
+  currentItem = 0
+}
+showPerson(currentItem)
+})
+
+// PREVIOUS BUTON
+prev.addEventListener('click', function(){
+  currentItem--
+  if(currentItem < 0 ){
+    currentItem = reviews.length -1
+  }
+  showPerson(currentItem)
+  })
+
+  // SURPRISE BUTTON
+  random.addEventListener('click', function(){
+    currentItem = Math.floor(Math.random() * reviews.length)
+    showPerson(currentItem)
+  })
